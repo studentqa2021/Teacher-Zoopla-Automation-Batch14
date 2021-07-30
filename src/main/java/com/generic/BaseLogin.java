@@ -17,10 +17,10 @@ public class BaseLogin {
 		// screenshot>> TakeScreenShot
 		ScreenShot.getScreenShot(driver, "Home page");
 
-		if (pf.getAcceptAllCookiesBtn().isDisplayed()) {// if display then
-			// highlight>> javaScriptExecutor
-			Highlighter.addColor(driver, pf.getAcceptAllCookiesBtn());
-			pf.getAcceptAllCookiesBtn().click();// click
+		if (pf.getAcceptAllCookiesBtn().size()>0) {// list total no = size()
+			
+			Highlighter.addColor(driver, pf.getAcceptAllCookiesBtn().get(0));
+			pf.getAcceptAllCookiesBtn().get(0).click();// click
 		}
 
 		pf.getFirstSigninBtn().click();

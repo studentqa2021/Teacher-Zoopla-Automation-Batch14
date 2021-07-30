@@ -1,5 +1,7 @@
 package com.generic;
 
+import java.util.List;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -13,7 +15,7 @@ public class MasterPageFactory {
 	}
 	
 	@FindBy(xpath ="(//*[contains(text(),'Accept all cookies')])[2]")
-	private WebElement  acceptAllCookiesBtn;
+	private List<WebElement>  acceptAllCookiesBtn;
 
 	@FindBy(xpath ="(//*[@class ='css-1rwrl3a e1niaah1'])[1]")
 	private WebElement  firstSigninBtn;
@@ -33,7 +35,7 @@ public class MasterPageFactory {
 	@FindBy(xpath ="(//*[@class='esdwd6d0 css-wxwl91-StyledLink-Link e33dvwd0'])[5]")
 	private WebElement  signOutBtn;
 
-	public WebElement getAcceptAllCookiesBtn() {
+	public List<WebElement> getAcceptAllCookiesBtn() {
 		return acceptAllCookiesBtn;
 	}
 
