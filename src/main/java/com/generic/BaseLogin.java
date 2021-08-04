@@ -17,8 +17,8 @@ public class BaseLogin {
 		// screenshot>> TakeScreenShot
 		ScreenShot.getScreenShot(driver, "Home page");
 
-		if (pf.getAcceptAllCookiesBtn().size()>0) {// list total no = size()
-			
+		if (pf.getAcceptAllCookiesBtn().size() > 0) {// list total no = size()
+
 			Highlighter.addColor(driver, pf.getAcceptAllCookiesBtn().get(0));
 			pf.getAcceptAllCookiesBtn().get(0).click();// click
 		}
@@ -26,6 +26,11 @@ public class BaseLogin {
 		pf.getFirstSigninBtn().click();
 		pf.getEmail().sendKeys(new BaseConfig().getData("user"));
 		pf.getPass().sendKeys(new BaseConfig().getData("pass"));
+		if (pf.getAcceptAllCookiesBtn().size() > 0) {// list total no = size()
+
+			Highlighter.addColor(driver, pf.getAcceptAllCookiesBtn().get(0));
+			pf.getAcceptAllCookiesBtn().get(0).click();// click
+		}
 		pf.getSeconfSigninBtn().click();
 
 		try {
@@ -37,7 +42,12 @@ public class BaseLogin {
 		// mouse hover >> Actions class>>must need to use perform()
 		Actions ac = new Actions(driver);
 		ac.moveToElement(pf.getMyZooplaBtn()).perform();
-
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		// sign out will be visible
 		if (pf.getSignOutBtn().isDisplayed()) {
 			System.out.println("Test Login function passed");

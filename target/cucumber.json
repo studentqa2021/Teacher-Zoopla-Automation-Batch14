@@ -3,7 +3,7 @@
     "line": 1,
     "elements": [
       {
-        "start_timestamp": "2021-07-30T00:18:56.587Z",
+        "start_timestamp": "2021-08-01T18:03:13.379Z",
         "line": 5,
         "name": "As a zoopla user, login should be successfull with valid credential",
         "description": "",
@@ -13,7 +13,7 @@
         "steps": [
           {
             "result": {
-              "duration": 4132000000,
+              "duration": 4191000000,
               "status": "passed"
             },
             "line": 7,
@@ -25,7 +25,7 @@
           },
           {
             "result": {
-              "duration": 6230000000,
+              "duration": 5627000000,
               "status": "passed"
             },
             "line": 8,
@@ -37,7 +37,7 @@
           },
           {
             "result": {
-              "duration": 1129000000,
+              "duration": 1435000000,
               "status": "passed"
             },
             "line": 9,
