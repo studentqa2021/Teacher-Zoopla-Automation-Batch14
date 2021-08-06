@@ -26,11 +26,16 @@ public class BaseLogin {
 		pf.getFirstSigninBtn().click();
 		pf.getEmail().sendKeys(new BaseConfig().getData("user"));
 		pf.getPass().sendKeys(new BaseConfig().getData("pass"));
-		if (pf.getAcceptAllCookiesBtn().size() > 0) {// list total no = size()
-
+		if (pf.getAcceptAllCookiesBtn().size() > 0 
+				&& pf.getAcceptAllCookiesBtn().get(0).isDisplayed() ){// list total no = size()
 			Highlighter.addColor(driver, pf.getAcceptAllCookiesBtn().get(0));
 			pf.getAcceptAllCookiesBtn().get(0).click();// click
 		}
+		
+		Actions ac = new Actions(driver);
+		Highlighter.addColor(driver, pf.getSeconfSigninBtn());
+		ac.moveToElement(pf.getSeconfSigninBtn()).perform();
+		System.out.println("I am here>>>> click now");
 		pf.getSeconfSigninBtn().click();
 
 		try {
@@ -40,7 +45,7 @@ public class BaseLogin {
 			e.printStackTrace();
 		}
 		// mouse hover >> Actions class>>must need to use perform()
-		Actions ac = new Actions(driver);
+		
 		ac.moveToElement(pf.getMyZooplaBtn()).perform();
 		try {
 			Thread.sleep(2000);
@@ -51,10 +56,10 @@ public class BaseLogin {
 		// sign out will be visible
 		if (pf.getSignOutBtn().isDisplayed()) {
 			System.out.println("Test Login function passed");
-			Assert.assertTrue(pf.getSignOutBtn().isDisplayed());
+			Assert.assertTrue(pf.getSignOutBtn().isDisplayed(),"sign out btn found");
 		} else {
 			System.out.println("Test login function  failed");
-			Assert.assertTrue(pf.getSignOutBtn().isDisplayed());
+			Assert.assertTrue(pf.getSignOutBtn().isDisplayed(),"Signout btn not found");
 		}
 
 	}

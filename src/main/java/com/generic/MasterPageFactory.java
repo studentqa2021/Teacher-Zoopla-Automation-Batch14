@@ -26,7 +26,7 @@ public class MasterPageFactory {
 	@FindBy(xpath ="//*[@name='password']")
 	private WebElement  pass;
 	
-	@FindBy(xpath ="(//*[contains(text(),'Sign in')])[10]")
+	@FindBy(xpath ="//*[@data-testid='signin-button']")
 	private WebElement  seconfSigninBtn;
 	
 	@FindBy(xpath ="(//*[contains(text(),'My Zoopla')])[1]")
