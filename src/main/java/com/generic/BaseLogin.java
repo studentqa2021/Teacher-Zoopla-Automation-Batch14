@@ -5,6 +5,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 
 import com.util.BaseConfig;
+import com.util.Click;
 import com.util.Highlighter;
 import com.util.ScreenShot;
 
@@ -26,7 +27,7 @@ public class BaseLogin {
 		pf.getFirstSigninBtn().click();
 		pf.getEmail().sendKeys(new BaseConfig().getData("user"));
 		pf.getPass().sendKeys(new BaseConfig().getData("pass"));
-		if (pf.getAcceptAllCookiesBtn().size() > 0) {// list total no = size()
+		if (pf.getAcceptAllCookiesBtn().size() > 1) {// list total no = size()
 
 			Highlighter.addColor(driver, pf.getAcceptAllCookiesBtn().get(0));
 			pf.getAcceptAllCookiesBtn().get(0).click();// click
