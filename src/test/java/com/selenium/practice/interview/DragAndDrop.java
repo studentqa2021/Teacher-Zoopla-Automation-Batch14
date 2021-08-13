@@ -26,16 +26,16 @@ public class DragAndDrop {
 		Thread.sleep(5000);
 		 
 		// Create object of actions class
-		Actions act=new Actions(driver);
+		Actions act=new Actions(driver);//1
 		 
 		// find element which we need to drag
-		WebElement drag=driver.findElement(By.xpath(".//*[@id='draggable']"));
+		WebElement drag=driver.findElement(By.xpath(".//*[@id='draggable']"));//2
 		 
 		// find element which we need to drop
-		WebElement drop=driver.findElement(By.xpath(".//*[@id='droppable']"));
+		WebElement drop=driver.findElement(By.xpath(".//*[@id='droppable']"));//3
 		 
 		// this will drag element to destination
-		act.dragAndDrop(drag, drop).build().perform();
+		act.dragAndDrop(drag, drop).perform();//4
 		// driver.quit();;
 
 	}

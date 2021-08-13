@@ -79,9 +79,7 @@ public class FindBrokenLink {
 			// connect using connect method
 			httpConn.connect();
 			// use getResponseCode() to get the response code.
-			if (httpConn.getResponseCode() == 200) {
-				System.out.println(urlLink + " - " + httpConn.getResponseMessage()+ "   Responce code = "+httpConn.getResponseCode());
-			}else if (httpConn.getResponseCode() == 404) {
+			if (httpConn.getResponseCode() == 200 ) {
 				System.out.println(urlLink + " - " + httpConn.getResponseMessage()+ "   Responce code = "+httpConn.getResponseCode());
 			}else {
 				System.out.println(urlLink + " - " + httpConn.getResponseMessage()+ "   Responce code = "+httpConn.getResponseCode());

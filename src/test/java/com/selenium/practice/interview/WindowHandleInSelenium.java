@@ -22,16 +22,18 @@ public class WindowHandleInSelenium {
 
 		driver.findElement(By.xpath("//*[contains(@href,'popup.php')]")).click();
 
-		String MainWindow = driver.getWindowHandle();
+		String parentWindow = driver.getWindowHandle();
 
 		// To handle all new opened window.
 		Set<String> allwindows= driver.getWindowHandles();
+		// must use set= remove duplicate window
 		for(String window:allwindows) {
+			//for(int i=0;i<allwindows.size();i++)
 
-			if (!MainWindow.equalsIgnoreCase(window)) {
+			if (!parentWindow.equalsIgnoreCase(window)) {
 				TimeUnit.SECONDS.sleep(2);
 				// Switching to Child window
-				driver.switchTo().window(window);
+				driver.switchTo().window(window);//move to child
 
 				TimeUnit.SECONDS.sleep(2);
 				driver.findElement(By.name("emailid")).sendKeys("sarowerny@gmail.com");
@@ -44,9 +46,9 @@ public class WindowHandleInSelenium {
 		}
 		TimeUnit.SECONDS.sleep(5);
 		// Switching to Parent window i.e Main Window.
-		driver.switchTo().window(MainWindow);
-		
-		
+		driver.switchTo().window(parentWindow);
+		driver.findElement(By.xpath("//*[contains(@href,'popup.php')]")).click();
+		driver.findElement(By.xpath("//*[contains(@href,'popup.php')]")).click();
 		TimeUnit.SECONDS.sleep(3);
 		driver.quit();
 	}

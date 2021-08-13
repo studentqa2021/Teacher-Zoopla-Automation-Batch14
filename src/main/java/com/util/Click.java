@@ -11,10 +11,12 @@ public class Click {
 
 		JavascriptExecutor executor = (JavascriptExecutor)driver;
 		executor.executeScript("arguments[0].click();", element);
+		
+		
 	}
 	public void getActionsClick(WebDriver driver,WebElement element) {
 		Actions action = new Actions(driver);
-		action.moveToElement(element).click().build().perform();
+		action.moveToElement(element).click().perform();
 		
 	}
 	

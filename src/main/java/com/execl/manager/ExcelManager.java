@@ -102,6 +102,7 @@ public class ExcelManager {
 
 	public static void main(String[] args) throws Throwable {
 		getTestData("./src/test/resources/Login Test cases_smoke.xlsx", "NY","TC_ID","tc_001", "STEPS");
+		getTestData("./src/test/resources/Login Test cases_smoke.xlsx", "NY","TC_ID","tc_001", "EXPECTED");
 		}
 
 	

@@ -18,22 +18,22 @@ public class MouseHober {
 		System.setProperty("webdriver.chrome.driver", "./Driver/chromedriver.exe");
 		WebDriver driver = new ChromeDriver();// upcasting
 		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-
 		driver.get("https://www.costco.com/");
 
 		
-
-		List<WebElement> element = driver.findElements(By.xpath("//*[@class='nav-item']//a"));
-		Highlighter.addColor(driver, element.get(2));
+// how to handle multiple elements in selenium?
+		List<WebElement> element = driver.findElements(By.xpath("//*[@class='nav-item']"));
+		//List = java collection framework
+		// how to add object in list==>add()
+		// total no ==> size()
+		// go to any specific object or element from a list ==>list object.get(index)
+		//optical =4 || index =3 ==> list object.get(3)
+		Highlighter.addColor(driver, element.get(3));
 		Thread.sleep(2500);
 		Actions action = new Actions(driver);
 
-		action.moveToElement(element.get(2)).build().perform();
-		
-		
-
-		//element.get(2).click();
+		action.moveToElement(element.get(3)).build().perform();
+	
 
 	}
 

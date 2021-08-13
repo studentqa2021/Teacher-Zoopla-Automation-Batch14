@@ -22,7 +22,7 @@ public class BaseLogin {
 			pf.getAcceptAllCookiesBtn().get(0).click();// click
 		}
 
-		pf.getFirstSigninBtn().click();
+		pf.getFirstSigninBtn().submit();
 		pf.getEmail().sendKeys(new BaseConfig().getData("user"));
 		pf.getPass().sendKeys(new BaseConfig().getData("pass"));
 		if (pf.getAcceptAllCookiesBtn().size() > 1) {// list total no = size()
@@ -33,9 +33,8 @@ public class BaseLogin {
 		
 		Actions ac = new Actions(driver);
 		Highlighter.addColor(driver, pf.getSeconfSigninBtn());
-		ac.moveToElement(pf.getSeconfSigninBtn()).perform();
-		System.out.println("I am here>>>> click now");
-		pf.getSeconfSigninBtn().click();
+		ac.moveToElement(pf.getSeconfSigninBtn()).click().perform();
+	
 
 		try {
 			Thread.sleep(2000);
