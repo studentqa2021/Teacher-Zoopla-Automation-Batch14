@@ -5,11 +5,12 @@ import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 
 import com.util.BaseConfig;
+import com.util.Click;
 import com.util.Highlighter;
 import com.util.ScreenShot;
 public class BaseLogin {
 
-	public void getLogin(WebDriver driver) {
+	public void getLogin(WebDriver driver)  {
 		// code for login >> xpath PF/POM
 		MasterPageFactory pf = new MasterPageFactory(driver);
 
@@ -21,8 +22,14 @@ public class BaseLogin {
 			Highlighter.addColor(driver, pf.getAcceptAllCookiesBtn().get(0));
 			pf.getAcceptAllCookiesBtn().get(0).click();// click
 		}
-
-		pf.getFirstSigninBtn().submit();
+		try {
+			Thread.sleep(3000);
+		} catch (InterruptedException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+	
+		Click.getJavaScriptExecutorClick(driver, pf.getFirstSigninBtn());
 		pf.getEmail().sendKeys(new BaseConfig().getData("user"));
 		pf.getPass().sendKeys(new BaseConfig().getData("pass"));
 		if (pf.getAcceptAllCookiesBtn().size() > 1) {// list total no = size()

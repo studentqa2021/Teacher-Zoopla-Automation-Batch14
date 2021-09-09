@@ -17,7 +17,7 @@ public class MasterPageFactory {
 	@FindBy(xpath ="(//*[contains(text(),'Accept all cookies')])[2]")
 	private List<WebElement>  acceptAllCookiesBtn;
 
-	@FindBy(xpath ="(//*[contains(text(),'Sign in')])[2]")
+	@FindBy(xpath ="(//*[@class='css-k008qs eptm4aq7']//a)[3]")
 	private WebElement  firstSigninBtn;
 	
 	@FindBy(xpath ="//*[@name='email']")
